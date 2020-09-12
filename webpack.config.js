@@ -14,14 +14,17 @@ module.exports = {
   module: {
     rules: [
       {
+        enforce: 'pre',
+        test: /\.(js|jsx|ts|tsx)$/,
+        loader: "eslint-loader",
+      },
+      {
         test: /\.(js|jsx)$/,
-        exclude: /(node_modules|bower_components)/,
         loader: "babel-loader",
         options: { presets: ["@babel/env"] },
       },
       {
         test: /\.(ts|tsx)$/,
-        exclude: /(node_modules|bower_components)/,
         loader: "ts-loader",
       },
       {
