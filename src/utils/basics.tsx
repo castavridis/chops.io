@@ -13,6 +13,45 @@ enum PITCH {
   G
 }
 
+// https://www.intmath.com/trigonometric-graphs/music.php
+const FREQUENCIES: Record<PITCH, any> = {
+  [PITCH.A]: {
+    flat: 207.65,
+    natural: 220,
+    sharp: 233.08,
+  },
+  [PITCH.B]: {
+    flat: 233.08,
+    natural: 246.94,
+    sharp: 261.63,
+  },
+  [PITCH.C]: {
+    flat: 246.94,
+    natural: 261.63, // Middle C
+    sharp: 277.18,
+  },
+  [PITCH.D]: {
+    flat: 277.18,
+    natural: 293.66,
+    sharp: 311.13,
+  },
+  [PITCH.E]: {
+    flat: 311.13,
+    natural: 329.63,
+    sharp: 349.23,
+  },
+  [PITCH.F]: {
+    flat: 329.63,
+    natural: 349.23,
+    sharp: 369.99,
+  },
+  [PITCH.G]: {
+    flat: 369.99,
+    natural: 392,
+    sharp: 415.3,
+  },
+};
+
 /**
  * Semitone steps between note and nearest neighbor
  */
@@ -112,6 +151,7 @@ enum SYMBOLS {
 }
 
 export {
+  FREQUENCIES,
   INTERVALS,
   NEXT_PITCH,
   PITCH,

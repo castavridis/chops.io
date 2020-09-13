@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Goals = () => {
+const GoalsPage = () => {
   return (
     <div>
       <h1>chops.io</h1>
@@ -32,4 +32,4 @@ const Goals = () => {
   );
 };
 
-export default Goals;
+export default GoalsPage;

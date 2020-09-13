@@ -1,4 +1,5 @@
 import React from 'react';
+import Note from './Note';
 import { PITCH, NEXT_PITCH, SCALES, INTERVALS } from '../utils/basics';
 
 interface ScaleProps {
@@ -13,22 +14,20 @@ interface ScaleProps {
 
 function generateScale (root: PITCH, type: 'major' | 'minor' = 'major') {
   const pitches = Object.keys(PITCH).length / 2;
-  const notes: JSX.Element[] = [<td>Notes</td>];
-  const intervals: JSX.Element[] = [<td>Intervals</td>];
+  const notes: JSX.Element[] = [<th key={-1}>Notes</th>];
+  const intervals: JSX.Element[] = [<td key={-1}>Intervals</td>];
   const scale = SCALES[type];
   let scaleSemitones = 0;
   let pitchSemitones = 0;
   for (let i = 0; i <= pitches; i++) {
     const curr = (root + i) % pitches;
-    const note = PITCH[curr];
     const sign = (scaleSemitones < pitchSemitones) 
-      ? '♭'
+      ? 'flat'
       : (scaleSemitones > pitchSemitones)
-        ? '♯'
-        : '' ; // ♮
-    // 
-    notes.push(<th>{note}{sign}</th>);
-    intervals.push(<td>{INTERVALS[scaleSemitones]}</td>);
+        ? 'sharp'
+        : 'natural' ;
+    notes.push(<th key={i}><Note pitch={curr} accidental={sign} /></th>);
+    intervals.push(<td key={i}>{INTERVALS[scaleSemitones]}</td>);
     // Increase steps
     scaleSemitones += scale[i];
     pitchSemitones += NEXT_PITCH[curr as PITCH];
@@ -38,7 +37,9 @@ function generateScale (root: PITCH, type: 'major' | 'minor' = 'major') {
       {type} scale:
       <table>
         <thead>
-          {notes}
+          <tr>
+            {notes}
+          </tr>
         </thead>
         <tbody>
           <tr>

@@ -1,6 +1,7 @@
 import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
+import "regenerator-runtime/runtime";
 import axe from 'react-axe';
 import App from './App';
 
