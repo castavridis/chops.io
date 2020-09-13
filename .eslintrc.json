@@ -88,6 +88,6 @@
         "after": true
       }],
       "rest-spread-spacing": ["warn", "never"],
-      "template-curly-spacing": ["warn", "always"]
+      "template-curly-spacing": ["warn", "never"]
   }
 }

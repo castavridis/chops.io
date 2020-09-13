@@ -32,7 +32,7 @@ const NEXT_PITCH: Record<PITCH, STEP> = {
   [PITCH.E]: STEP.half,
   [PITCH.F]: STEP.whole,
   [PITCH.G]: STEP.whole,
-}
+};
 
 /**
  * There are 12 semitones that represent the spectrum 
@@ -52,7 +52,7 @@ const INTERVALS: string[] = [
   'M6',
   'm7',
   'M7',
-  'P8'
+  'P8',
 ];
 
 enum STAFF_COMPONENT {
@@ -103,7 +103,7 @@ const SCALES: Record<string, STEP[]> = {
     STEP.whole,
     STEP.whole,
   ],
-}
+};
 
 enum SYMBOLS {
   sharp,
@@ -112,6 +112,8 @@ enum SYMBOLS {
 }
 
 export {
+  INTERVALS,
+  NEXT_PITCH,
   PITCH,
   SCALES,
   STEP,

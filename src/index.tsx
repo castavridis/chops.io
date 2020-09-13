@@ -1,5 +1,6 @@
 import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import axe from 'react-axe';
 import App from './App';
 
@@ -9,7 +10,9 @@ if (process.env.NODE_ENV !== 'production') {
 
 ReactDOM.render(
   <StrictMode>
-    <App />
+    <Router>
+      <App />
+    </Router>
   </StrictMode>
   ,
   document.getElementById('root')
