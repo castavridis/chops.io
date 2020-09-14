@@ -45,14 +45,14 @@ module.exports = {
   },
   resolve: { extensions: ["*", ".js", ".jsx", ".ts", ".tsx"] },
   output: {
-    path: path.resolve(__dirname, "dist/"),
-    publicPath: "/dist/",
+    path: path.resolve(__dirname, "public/"),
+    publicPath: "/public/",
     filename: "bundle.js",
   },
   devServer: {
     contentBase: path.join(__dirname, "public/"),
     port: 3030,
-    publicPath: "http://localhost:3030/dist/",
+    publicPath: "http://localhost:3030/public/",
     hotOnly: true,
   },
   plugins: [new webpack.HotModuleReplacementPlugin()],
